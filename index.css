@@ -1,0 +1,89 @@
+.reporterContainer {  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 20% 80fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "ComponentMenu"
+    "ViewBody";
+}
+
+.ComponentMenu {  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 20% 80%;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "ComponentTab"
+    "ComponentOptions";
+  grid-area: ComponentMenu;
+}
+
+.ComponentTab { grid-area: ComponentTab; }
+
+.ComponentOptions {  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 100%;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "otherArea zoomArea";
+  grid-area: ComponentOptions;
+}
+
+.zoomArea { grid-area: zoomArea; }
+
+.otherArea { grid-area: otherArea; }
+
+.ViewBody {  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "PropertyMenu PageContainer";
+  grid-area: ViewBody;
+}
+
+.PageContainer { grid-area: PageContainer; }
+
+.PropertyMenu {  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 40% 60%;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "PageList"
+    "PropertyOptions";
+  grid-area: PropertyMenu;
+}
+
+.PageList { grid-area: PageList; }
+
+.PropertyOptions { grid-area: PropertyOptions; }
+
+
+html, body , .reporterContainer {
+  height: 100%;
+  margin: 0;
+}
+
+/* For presentation only, no need to copy the code below */
+
+.reporterContainer * {
+  border: 1px solid red;
+  position: relative;
+}
+
+.reporterContainer *:after {
+  content:attr(class);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
